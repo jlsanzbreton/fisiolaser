@@ -317,24 +317,54 @@
             <span class="label">Preguntas frecuentes</span>
             <h2>Lo que mis pacientes suelen preguntar</h2>
           </div>
-          <dl class="faq-list">
-            <div class="faq-item reveal">
-              <dt>¿Existe la posibilidad de evitar la cirugía?</dt>
-              <dd>Depende exclusivamente de la situación clínica de cada paciente, pero muchos han podido beneficiarse de este tratamiento y retrasarla o posponerla indefinidamente. La terapia láser combinada bio-estimulante tiene indicaciones precisas. En la primera consulta analizamos si tu caso es compatible con este enfoque y te informamos con claridad sobre las expectativas reales.</dd>
-            </div>
-            <div class="faq-item reveal">
-              <dt>¿Cuántas sesiones voy a necesitar?</dt>
-              <dd>No existe una respuesta universal. El número de sesiones se define a partir de la evaluación inicial y se revisa en cada consulta de seguimiento, en función de tu evolución clínica real.</dd>
-            </div>
-            <div class="faq-item reveal">
-              <dt>¿El tratamiento produce dolor?</dt>
-              <dd>El protocolo está diseñado para avanzar de forma progresiva sin agravar los síntomas existentes y minimizar cualquier molestia. Si en algún momento algo no responde como esperamos, lo valoramos y ajustamos antes de continuar.</dd>
-            </div>
-            <div class="faq-item reveal">
-              <dt>¿Puedo venir sin informe médico previo?</dt>
-              <dd>Sí. Si dispones de resonancia magnética u otros estudios diagnósticos, tráelos: los analizaremos contigo. Si no, realizaremos igualmente la evaluación clínica funcional completa.</dd>
-            </div>
-          </dl>
+          <div class="faq-list">
+
+            <details class="faq-item reveal">
+              <summary>¿Qué es la laserterapia bioestimulante y cómo funciona?</summary>
+              <div class="faq-body">
+                <p>El término «láser» es un acrónimo inglés que en español se traduce como <em>Luz Amplificada por la Emisión Estimulada de Radiación</em>. En la práctica clínica, la laserterapia bioestimulante utiliza fotones de luz para actuar directamente sobre huesos, cartílagos y nervios, de modo que los tejidos blandos circundantes inicien su propia reestructuración sin intervención quirúrgica ni fármacos.</p>
+                <p>Su acción es antiinflamatoria, analgésica y antiedematosa. No produce calor ni dolor: es una técnica no invasiva e indolora que el organismo tolera sin efectos secundarios.</p>
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>¿Para qué patologías está indicada?</summary>
+              <div class="faq-body">
+                <p>En FisioLáser aplicamos la laserterapia tanto en patologías agudas como crónicas. Está especialmente indicada para: edemas óseos, hernias y protusiones discales, artrosis, calcificaciones, neuralgias, osteonecrosis, bursitis, fisuras y fracturas en consolidación, espolones calcáneos y acortamiento de isquiotibiales, entre otras.</p>
+                <p>Todos los tratamientos de nuestro centro se realizan con laserterapia, ya que es la herramienta terapéutica más versátil tanto para cuadros recientes como para los que llevan más de seis meses sin resolverse.</p>
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>¿Existe la posibilidad de evitar la cirugía?</summary>
+              <div class="faq-body">
+                <p>En muchos casos, sí. La laserterapia bioestimulante estimula la regeneración natural de los tejidos y tiene una eficacia documentada en la conservación articular, lo que ha permitido a numerosos pacientes posponer o evitar el quirófano. Ahora bien, depende de la situación clínica concreta de cada persona.</p>
+                <p>En la primera consulta analizamos si tu caso es compatible con este enfoque y te damos una valoración honesta sobre las expectativas reales antes de que tomes ninguna decisión.</p>
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>¿Cuántas sesiones voy a necesitar?</summary>
+              <div class="faq-body">
+                <p>No existe una cifra estándar: cada caso es diferente. El número de sesiones se define durante la primera consulta a partir de la evaluación clínica, las pruebas de imagen disponibles y tus objetivos funcionales. A partir de ahí, el plan se revisa en cada seguimiento según tu evolución real, sin protocolos cerrados que ignoren tu respuesta al tratamiento.</p>
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>¿El tratamiento produce dolor?</summary>
+              <div class="faq-body">
+                <p>No. La laserterapia es totalmente indolora e inocua. A diferencia de otras técnicas, no genera calor tisular ni sensaciones molestas durante la aplicación. El protocolo avanza de forma progresiva para no agravar los síntomas existentes, y si en algún momento la evolución no es la esperada, ajustamos antes de continuar.</p>
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>¿Puedo venir sin informe médico previo?</summary>
+              <div class="faq-body">
+                <p>Sí, puedes venir sin ningún documento. Si dispones de resonancia magnética, radiografías u otros estudios, tráelos: los analizaremos contigo en clave funcional, no solo radiológica. Si no tienes nada, realizaremos igualmente la evaluación clínica completa y trabajaremos desde ahí.</p>
+              </div>
+            </details>
+
+          </div>
         </div>
       </section>
 
@@ -413,6 +443,17 @@
     </a>
 
     <script>
+      // ── Acordeón FAQ: cierra los demás al abrir uno ─────────────────────
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('toggle', () => {
+          if (item.open) {
+            document.querySelectorAll('.faq-item[open]').forEach(other => {
+              if (other !== item) other.removeAttribute('open');
+            });
+          }
+        });
+      });
+
       // ── IntersectionObserver: anima .reveal solo al entrar en viewport ──
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {

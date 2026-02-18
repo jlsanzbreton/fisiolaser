@@ -322,12 +322,66 @@ img     { display: block; max-width: 100%; height: auto; }
 .case-card a  { display: inline-block; margin-top: auto; padding-top: .9rem; color: var(--teal); font-weight: 700; font-size: .9rem; }
 .case-card a:hover { text-decoration: underline; }
 
-/* ── FAQ ────────────────────────────────────────────────────────────────── */
-.faq-wrap { max-width: 840px; }
-.faq-list { display: grid; gap: .85rem; margin: 0; padding: 0; }
-.faq-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.85rem; }
-.faq-item dt { font-weight: 800; font-size: 1rem; color: var(--navy); margin-bottom: .7rem; }
-.faq-item dd { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.65; }
+/* ── FAQ acordeón ────────────────────────────────────────────────────────── */
+.faq-wrap  { max-width: 840px; }
+.faq-list  { display: grid; gap: .7rem; }
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.faq-item[open] {
+  box-shadow: 0 4px 18px rgba(12,42,78,.1);
+  border-color: var(--teal);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.6rem;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--navy);
+  list-style: none;
+  user-select: none;
+  transition: color .15s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--off);
+  color: var(--teal);
+  font-weight: 900; font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .25s, background .15s;
+  line-height: 1;
+}
+.faq-item[open] summary::after {
+  content: '×';
+  transform: rotate(90deg);
+  background: rgba(26,165,213,.12);
+}
+.faq-item summary:hover { color: var(--teal); }
+
+.faq-body {
+  padding: 0 1.6rem 1.3rem;
+  display: grid; gap: .65rem;
+}
+.faq-body p {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.68;
+  margin: 0;
+}
 
 /* ── Contacto ───────────────────────────────────────────────────────────── */
 .contact-section { background: var(--navy); padding-block: 3rem; }
