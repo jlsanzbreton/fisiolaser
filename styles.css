@@ -385,9 +385,15 @@ img     { display: block; max-width: 100%; height: auto; }
 
 /* ── Contacto ───────────────────────────────────────────────────────────── */
 .contact-section { background: var(--navy); padding-block: 3rem; }
-.contact-section .section-head { margin-bottom: 1.75rem; }
+.contact-section .section-head { margin-bottom: .6rem; }
 .contact-section .section-head h2 { color: #fff; }
 .contact-section .section-head p  { color: rgba(255,255,255,.62); max-width: 42ch; }
+.contact-lead {
+  color: rgba(255,255,255,.62);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
 
 .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 2rem; align-items: stretch; }
 .contact-info {
