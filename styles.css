@@ -415,6 +415,16 @@ input::placeholder, textarea::placeholder { color: #9aabb9; }
 .form-privacy a { color: var(--teal); font-weight: 700; }
 .form-privacy a:hover { text-decoration: underline; }
 
+.form-success {
+  background: rgba(26,165,213,.12);
+  border: 1px solid rgba(26,165,213,.3);
+  border-radius: 8px;
+  padding: .9rem 1.1rem;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: .95rem;
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer { background: #071d38; border-top: 3px solid var(--teal); }
 .footer-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: rgba(255,255,255,.38); font-size: .84rem; }
