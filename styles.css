@@ -412,6 +412,8 @@ input:focus-visible, textarea:focus-visible {
 }
 input::placeholder, textarea::placeholder { color: #9aabb9; }
 .form-privacy { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+.form-privacy a { color: var(--teal); font-weight: 700; }
+.form-privacy a:hover { text-decoration: underline; }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer { background: #071d38; border-top: 3px solid var(--teal); }
